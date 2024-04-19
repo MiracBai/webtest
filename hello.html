@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Click</title>
+<style>
+    .red {
+        color: red;
+    }
+    .green {
+        color: green;
+    }
+</style>
+</head>
+<body>
+<button id="button1">Button 1</button>
+<button id="button2">Button 2</button>
+<button id="button3">Button 3</button>
+
+<script>
+    document.getElementById('button1').addEventListener('click', function() {
+        this.classList.add('red');
+        document.body.innerHTML += '<p class="red">Incorrect</p>';
+    });
+
+    document.getElementById('button2').addEventListener('click', function() {
+        this.classList.add('red');
+        document.body.innerHTML += '<p class="red">Incorrect</p>';
+    });
+
+    document.getElementById('button3').addEventListener('click', function() {
+        this.classList.add('green');
+        document.body.innerHTML += '<p class="green">Correct</p>';
+    });
+    
+</script>
+<br>
+<input type="text" id="inputField" placeholder="Enter Mirac">
+<button id="checkButton">Check</button>
+
+<script>
+document.getElementById('checkButton').addEventListener('click', function() {
+    var inputText = document.getElementById('inputField').value.trim();
+    
+    if (inputText.toUpperCase() === 'MIRAC') {
+        alert('Correct');
+    } else {
+        alert('Incorrect');
+    }
+});
+</script>
+</body>
+</html>
