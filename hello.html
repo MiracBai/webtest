@@ -20,6 +20,7 @@
 <button id="button3">Button 3</button>
 
 <script>
+
     document.getElementById('button1').addEventListener('click', function() {
         this.classList.add('red');
         document.body.innerHTML += '<p class="red">Incorrect</p>';
@@ -50,6 +51,21 @@ document.getElementById('checkButton').addEventListener('click', function() {
         alert('Incorrect');
     }
 });
+let counter=0;
+function count(){
+    counter++;
+    document.querySelector('h1').innerHTML=counter;
+}
+function clearcount(){
+    counter=0;
+    document.querySelector('h1').innerHTML=counter;
+}
 </script>
+
+<h1>
+    0
+</h1>
+<button onclick="count()">Count</button>
+<button onclick="clearcount()">Clear</button>
 </body>
 </html>
