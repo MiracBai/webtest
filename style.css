@@ -6,3 +6,29 @@
 .green {
     color: lightgreen;
 }
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.rotate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size:xx-large;
+    color:brown;
+    font-weight:bold;
+    transform-origin: center;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
