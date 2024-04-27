@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-<h2>choose the thrid one</h2>
+<h3 style="color:brown; font-size:xx-large">choose the third one</h3>
 <button id="button1">Button 1</button>
 <button id="button2">Button 2</button>
 <button id="button3">Button 3</button>
@@ -51,7 +51,9 @@ document.getElementById('checkButton').addEventListener('click', function() {
         alert('Incorrect');
     }
 });
+
 let counter=0;
+let autocounter=0;
 function count(){
     counter++;
     document.querySelector('h1').innerHTML=counter;
@@ -65,7 +67,25 @@ document.addEventListener('DOMContentLoaded',function(){
         document.querySelector('h1').style.color=this.value;
     }
 
+    setInterval(autocount,1000);
+
+    document.getElementById('clearauto').addEventListener('click', function() {
+    autocounter=0;
+    console.log(autocounter);
+    localStorage.setItem('autocounter',autocounter);
+    document.querySelector('h2').innerHTML=autocounter;
 });
+});
+if(!localStorage.getItem('autocounter')){
+    localStorage.setItem('autocounter',0)
+}
+function autocount(){
+    autocounter=localStorage.getItem('autocounter');
+    autocounter++;
+    document.querySelector('h2').innerHTML=autocounter;
+    localStorage.setItem('autocounter',autocounter)
+}
+
 </script>
 
 <h1>
@@ -79,5 +99,7 @@ document.addEventListener('DOMContentLoaded',function(){
     <option value="blue">Blue</option>
     <option value="green">Green</option>
 </select>
+<h2>0</h2>
+<button id="clearauto">Clear autocounter</button>
 </body>
 </html>
