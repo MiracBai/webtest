@@ -14,80 +14,19 @@
 </style>
 </head>
 <body>
+<script src="fun.js"></script>
+
+<script>
+
+</script>
 <h3 style="color:brown; font-size:xx-large">choose the third one</h3>
 <button id="button1">Button 1</button>
 <button id="button2">Button 2</button>
 <button id="button3">Button 3</button>
 
-<script>
-
-    document.getElementById('button1').addEventListener('click', function() {
-        this.classList.add('red');
-        document.body.innerHTML += '<p class="red">Incorrect</p>';
-    });
-
-    document.getElementById('button2').addEventListener('click', function() {
-        this.classList.add('red');
-        document.body.innerHTML += '<p class="red">Incorrect</p>';
-    });
-
-    document.getElementById('button3').addEventListener('click', function() {
-        this.classList.add('green');
-        document.body.innerHTML += '<p class="green">Correct</p>';
-    });
-    
-</script>
 <br>
 <input type="text" id="inputField" placeholder="Enter Mirac">
 <button id="checkButton">Check</button>
-
-<script>
-document.getElementById('checkButton').addEventListener('click', function() {
-    var inputText = document.getElementById('inputField').value.trim();
-    
-    if (inputText.toUpperCase() === 'MIRAC') {
-        alert('Correct');
-    } else {
-        alert('Incorrect');
-    }
-});
-
-let counter=0;
-let autocounter=0;
-function count(){
-    counter++;
-    document.querySelector('h1').innerHTML=counter;
-}
-function clearcount(){
-    counter=0;
-    document.querySelector('h1').innerHTML=counter;
-}
-document.addEventListener('DOMContentLoaded',function(){
-    document.querySelector('select').onchange=function(){
-        document.querySelector('h1').style.color=this.value;
-    }
-
-    setInterval(autocount,1000);
-
-    document.getElementById('clearauto').addEventListener('click', function() {
-    autocounter=0;
-    console.log(autocounter);
-    localStorage.setItem('autocounter',autocounter);
-    document.querySelector('h2').innerHTML=autocounter;
-});
-});
-if(!localStorage.getItem('autocounter')){
-    localStorage.setItem('autocounter',0)
-}
-function autocount(){
-    autocounter=localStorage.getItem('autocounter');
-    autocounter++;
-    document.querySelector('h2').innerHTML=autocounter;
-    localStorage.setItem('autocounter',autocounter)
-}
-
-</script>
-
 <h1>
     0
 </h1>
@@ -99,7 +38,9 @@ function autocount(){
     <option value="blue">Blue</option>
     <option value="green">Green</option>
 </select>
-<h2>0</h2>
+<h2>
+    0
+</h2>
 <button id="clearauto">Clear autocounter</button>
 </body>
 </html>
