@@ -60,6 +60,12 @@ function clearcount(){
     counter=0;
     document.querySelector('h1').innerHTML=counter;
 }
+document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector('select').onchange=function(){
+        document.querySelector('h1').style.color=this.value;
+    }
+
+});
 </script>
 
 <h1>
@@ -67,5 +73,11 @@ function clearcount(){
 </h1>
 <button onclick="count()">Count</button>
 <button onclick="clearcount()">Clear</button>
+<select>
+    <option value="black">Black</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+</select>
 </body>
 </html>
