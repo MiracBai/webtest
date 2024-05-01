@@ -41,6 +41,8 @@ document.getElementById('checkButton').addEventListener('click', function() {
         document.querySelector('h1').style.color=this.value;
     }
 
+    
+
     setInterval(autocount,1000);
 
     document.getElementById('clearauto').addEventListener('click', function() {
@@ -53,9 +55,18 @@ document.getElementById('checkButton').addEventListener('click', function() {
 if(!localStorage.getItem('autocounter')){
     localStorage.setItem('autocounter',0)
 }
+
 function autocount(){
     autocounter=localStorage.getItem('autocounter');
     autocounter++;
     document.querySelector('h2').innerHTML=autocounter;
     localStorage.setItem('autocounter',autocounter)
+}
+
+function changerotate(){
+    if(document.getElementById('rotatetext').style.animationPlayState=='running'){
+        document.getElementById('rotatetext').style.animationPlayState='paused';
+    }
+    else
+    document.getElementById('rotatetext').style.animationPlayState='running';
 }
